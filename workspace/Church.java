@@ -1,4 +1,6 @@
-
+//Chase Walker
+//Church
+//moves like a king, captures by jumping over, converts pieces it captures
 import java.util.ArrayList;
 
 //you will need to implement two functions in this file.
