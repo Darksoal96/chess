@@ -2,8 +2,6 @@
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.util.ArrayList;
-
 import javax.swing.*;
 
 
@@ -17,7 +15,7 @@ public class Square extends JComponent {
     //true for white, false for black.
     private final boolean color;
     //if there's a piece on the square this stores it. If there isn't this stores null.
-    private Piece occupyingPiece;
+    private Piece  occupyingPiece;
     
     //if desired you can use this to retain the piece where it is but make it invisible to the user. 
     //True means to display the piece. This property will be switched to false when we are dragging a piece around while choosing our next move.

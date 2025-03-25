@@ -28,7 +28,8 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 	private static final String RESOURCES_WQUEEN_PNG = "wqueen.png";
 	private static final String RESOURCES_WPAWN_PNG = "wpawn.png";
 	private static final String RESOURCES_BPAWN_PNG = "bpawn.png";
-	
+    private static final String RESOURCES_BCHURCH_PNG = "bchurch.png";
+	private static final String RESOURCES_WCHURCH_PNG = "wchurch.png";
 	// Logical and graphical representations of board
 	private final Square[][] board;
     private final GameWindow g;
@@ -90,9 +91,9 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
 	//it's up to you how you wish to arrange your pieces.
     private void initializePieces() {
     //White pieces
-        board[3][4].put(new Piece(true, RESOURCES_WKING_PNG));
+        board[3][4].put(new Church(false, RESOURCES_BCHURCH_PNG));
         //board[2][3].put(new Piece(false, RESOURCES_BKING_PNG)); 
-        board[3][5].put(new Piece(true, RESOURCES_WROOK_PNG));
+        board[3][5].put(new Church(true, RESOURCES_WROOK_PNG));
 
     }
 
@@ -161,6 +162,8 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     public void mouseReleased(MouseEvent e) {
         Square endSquare = (Square) this.getComponentAt(new Point(e.getX(), e.getY()));
         if(currPiece!= null && currPiece.getLegalMoves(this, fromMoveSquare).contains(endSquare)){
+            if(currPiece instanceof  Church){
+                System.out.println("church moved");
                if(fromMoveSquare.getRow()-2 == endSquare.getRow()){
                     board[fromMoveSquare.getRow()-1][fromMoveSquare.getCol()].getOccupyingPiece().flipColor();
                }
@@ -168,11 +171,12 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
                     board[fromMoveSquare.getRow()+1][fromMoveSquare.getCol()].getOccupyingPiece().flipColor();
                }
                if(fromMoveSquare.getCol()-2 == endSquare.getCol()){
-                    board[fromMoveSquare.getCol()-1][fromMoveSquare.getRow()].getOccupyingPiece().flipColor();
+                    board[fromMoveSquare.getRow()][fromMoveSquare.getCol()-1].getOccupyingPiece().flipColor();
 
                }
                if(fromMoveSquare.getCol()+2 == endSquare.getCol()){
-                    board[fromMoveSquare.getCol()+1][fromMoveSquare.getRow()].getOccupyingPiece().flipColor();
+                    board[fromMoveSquare.getRow()][fromMoveSquare.getCol()+1].getOccupyingPiece().flipColor();
+                    System.out.println("flip right");
 
                }
 
@@ -191,7 +195,7 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
                 board[fromMoveSquare.getRow()+1][fromMoveSquare.getCol()-1].getOccupyingPiece().flipColor();
 
                }
-
+            }
                 endSquare.put(currPiece);
                 fromMoveSquare.removePiece();
                 whiteTurn = !whiteTurn;
