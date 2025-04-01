@@ -7,8 +7,8 @@ import java.util.ArrayList;
 public class Church extends Piece {
   protected boolean color;
 
-    public Church(boolean isWhite, String img_file) {
-      super(isWhite,img_file);
+    public Church(boolean isWhite, String img_file,String otherImg) {
+      super(isWhite,img_file,otherImg);
     }
     
     

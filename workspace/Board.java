@@ -229,6 +229,12 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
         }
         repaint();
     }
+    public void isInCheck(MouseEvent e){
+        0
+        
+
+
+    }
 
     @Override
     public void mouseMoved(MouseEvent e) {
