@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 //you will need to implement two functions in this file.
 public class Church extends Piece {
-  protected boolean color;
 
     public Church(boolean isWhite, String img_file,String otherImg) {
       super(isWhite,img_file,otherImg);

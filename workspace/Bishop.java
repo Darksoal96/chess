@@ -21,8 +21,8 @@ import javax.imageio.ImageIO;
 public class Bishop extends Piece{
     // Precondition: Valid boolean color and image file
     // Postcondition: A piece is created that can move like a bishop, in diagonals, with the provided color and image
-    public Bishop(boolean isWhite, String img_file) {
-      super(isWhite,img_file);
+    public Bishop(boolean isWhite, String img_file, String otherImg) {
+            super(isWhite,img_file,otherImg);
     }
     
 // Precondition: The piece exists, not null 

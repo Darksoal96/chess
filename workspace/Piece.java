@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 public class Piece {
-	private boolean color;
+	protected boolean color;
 	private BufferedImage img;
 	private BufferedImage other;
 
@@ -61,5 +61,8 @@ public class Piece {
 	public void flipColor(){
 		color = !color;
 		//swap img with other img
+		BufferedImage temp = img; 
+		img = other;
+		other = temp;
 	  }
 }

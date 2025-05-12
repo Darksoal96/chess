@@ -13,17 +13,7 @@ public class Pawn extends Piece {
      
     public Pawn(boolean isWhite, String img_file,String otherImg) {
         super(isWhite, img_file, otherImg);
-        
-        color = isWhite;
-  
- 
-        try {
-            if (this.img == null) {
-              this.img = ImageIO.read(getClass().getResource(img_file));
-            }
-          } catch (IOException e) {
-            System.out.println("File not found: " + e.getMessage());
-          }
+      
       }
     
     

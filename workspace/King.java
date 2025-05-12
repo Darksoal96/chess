@@ -14,8 +14,8 @@ import javax.imageio.ImageIO;
 
 public class King extends Piece {
 	// constructor
-	public King(boolean isWhite, String img_file) {
-		super(isWhite, img_file);
+	public King(boolean isWhite, String img_file, String otherImg) {
+	      super(isWhite,img_file,otherImg);
 	}
 
 	// Pre-condition: b is a non-null board that contains some squares. The
